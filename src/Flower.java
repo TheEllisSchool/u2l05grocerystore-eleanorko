@@ -2,44 +2,71 @@
 	public class Flower extends Item {
 
 		//Attributes
-			private double order;
-			private String expirationDate;
-			private int fee = 5;
+			private String color;
+			private String variety;
+			private double price;
+			private int order;
+			private boolean arrangement;
 			
 			//Constructor 
-			public Produce(String t, double u, double w, String e) {
-				super(t, u);
-				weight = w;
-				expirationDate = e;
+			public Flower(String v, String c, boolean a, int o, double u) {
+				super("Flower", u);
+				color = c;
+				variety = v;
+				arrangement = a;
+				order = o;
 				price = getPrice();
 			}
 			
 			//Method
-			public void setWeight (double w) {
-				weight = w;
+			public void setColor (String c) {
+				color = c;
 			}
 			
-			public double getWeight() {
-				return weight;
+			public String getColor() {
+				return color;
 			}
 			
-			public void setexpirationDate (String e) {
-				expirationDate = e;
+			public void setVariety (String v) {
+				variety = v;
 			}
 			
-			public String getExpirationDate() {
-				return expirationDate;
+			public String getVariety() {
+				return variety;
+			}
+			
+			public void setArrangement (boolean a) {
+				arrangement = a;
+			}
+			
+			public boolean getArrangement() {
+				return arrangement;
+			}
+			
+			
+			public void setOrder (int o) {
+				order = o;
+			}
+			
+			public int getOrder() {
+				return order;
 			}
 			
 			public double getPrice() {
-				price = weight * getUnitPrice();
-				return price;
-			}
+				if (arrangement == true) {
+					price = getUnitPrice() * order + 5;
+					return price;
+				}
+				else {
+					price = getUnitPrice() * order;
+					return price;
+				}}
+			
 			
 			public String toString() {
-				return "Your order: " + '\n' + "Produce Type: " + getType() + '\n' + "Unit Price: $" 
-						+ getUnitPrice() + " per pound" + '\n' + "Weight: " + getWeight() + " lbs" + '\n' + "Expiration Date: " 
-						+ getExpirationDate() + '\n' + "Total price: $" + getPrice();
+				return '\n' + "Your order: " + '\n' + "Flower Type: " + getVariety() + '\n' + "Unit Price: $" 
+						+ getUnitPrice() + " per flower" + '\n' + "Number of Flowers: " + getOrder() + " flowers" +
+						'\n' + "Total price: $" + getPrice();
 		
 	}}
 	

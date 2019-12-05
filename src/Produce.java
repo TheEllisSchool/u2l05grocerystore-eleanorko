@@ -1,12 +1,12 @@
 public class Produce extends Item {
 
 	//Attributes
-		private double weight;
+		private int weight;
 		private String expirationDate;
 		private double price;
 		
 		//Constructor 
-		public Produce(String t, double u, double w, String e) {
+		public Produce(String t, double u, int w, String e) {
 			super(t, u);
 			weight = w;
 			expirationDate = e;
@@ -14,11 +14,11 @@ public class Produce extends Item {
 		}
 		
 		//Method
-		public void setWeight (double w) {
+		public void setWeight (int w) {
 			weight = w;
 		}
 		
-		public double getWeight() {
+		public int getWeight() {
 			return weight;
 		}
 		
@@ -36,7 +36,7 @@ public class Produce extends Item {
 		}
 		
 		public String toString() {
-			return "Your order: " + '\n' + "Produce Type: " + getType() + '\n' + "Unit Price: $" 
+			return '\n' + "Your order: " + '\n' + "Produce Type: " + getType() + '\n' + "Unit Price: $" 
 					+ getUnitPrice() + " per pound" + '\n' + "Weight: " + getWeight() + " lbs" + '\n' + "Expiration Date: " 
 					+ getExpirationDate() + '\n' + "Total price: $" + getPrice();
 	

@@ -1,11 +1,12 @@
-/*import java.text.DecimalFormat;
+import java.text.DecimalFormat;
 
 public class Item {
 
 	//Attributes
 	private String type;
 	private double unitPrice; 
-	private int quantity = 50;
+	private int quantity;
+	private double price;
 	
 	
 	//Constructor
@@ -15,6 +16,14 @@ public class Item {
 				
 			}
 	
+		//Constructor
+			public Item(String t, int q, double u) {
+				type = t;
+				quantity = q;
+				unitPrice = u;
+				price = getPrice();
+				
+			}
 	
 	//Methods
 	
@@ -34,15 +43,23 @@ public class Item {
 		return unitPrice;
 	}
 
+	public void setQuantity(int q) {
+		quantity = q;
+	}
 	
-	public double getQuantity() {
+	public int getQuantity() {
 		return quantity;
 	}
 	
-	/*public String toString() {
-		return ("Your order is: " + type + ;
-		
-	}*/
+	public double getPrice() {
+		price = quantity * getUnitPrice();
+		return price;
+	}
+	
+	public String toString() {
+		return '\n' + "Your order: " + '\n' + "Canned Good: " + getType() + '\n' + "Number of Cans: " + getQuantity() +
+				'\n' + "Unit Price: $" + getUnitPrice() + " per can" + '\n' + "Total price: $" + getPrice();
+	}
 	
 	
 	
